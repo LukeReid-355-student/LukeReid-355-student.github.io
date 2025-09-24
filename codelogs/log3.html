@@ -1,29 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-
-    <!-- meta tags and title -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Title</title>
-
-    <!-- external and internal CSS -->
-    <link rel="stylesheet" href="styles.css" media="all">
+    <title>CSS Units Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
     <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+        }
     </style>
-
-
-    </script>
-
 </head>
 
-<body>
-    <h1> CSS Measuring Units</h1>
-    <h2>Difference between absolute and relative CSS length units</h2>
-    <p>CSS uses length units, which may be either absolute or relative, to define how large components look.  Absolute units, such as pixels (px) and points (pt), are constant regardless of context or screen size.  Although they are precise, they are not device-neutral.  Conversely, relative units like lh, rlh, vw, and vh are more helpful in responsive design as they adjust according to external factors like font size or viewport dimensions.</p>
-<p>For instance, pt, which is more frequently used in print styles, is the same as 1/72 of an inch, but px, which is the most widely used absolute measure, represents a single pixel on a screen.  On the other hand, lh and rlh are proportional to line height.  In order to assist maintain consistent vertical spacing throughout a webpage, lh matches the line height of the element itself, whereas rlh refers to the line height of the root element.</p>
-    <p>Viewport-based units, such as vw and vh, adjust to the browser window's size.  1vw and 1vh are equivalent to 1% of the viewport's width and height, respectively.  In current web design, these units are frequently used to create full-screen portions or make sure that typography adjusts proportionately to window resizing.  They are crucial for layouts that are intended to appear nice on desktops and mobile devices because of their responsiveness.</p>
+<body class="bg-white text-black">
+    <header class="bg-black text-white py-6 px-4 shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold text-center">CSS Units of Measurement</h1>
+            <p class="text-center mt-2">Absolute vs. Relative Units Explained</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-bold mb-4 border-b pb-2">Absolute Units</h2>
+                <p class="mb-4">Absolute units are constant regardless of screen size or other variables. They reflect
+                    precise measures (such as inches, points, or pixels) and will appear the same in every situation.
+                </p>
+
+                <div class="mt-6">
+                    <h3 class="font-bold mb-2">px (pixels)</h3>
+                    <p>The most commonly used absolute unit in web design. A pixel represents one dot on the screen.</p>
+                </div>
+
+                <div class="mt-4">
+                    <h3 class="font-bold mb-2">pt (points)</h3>
+                    <p>Traditionally used in print design, one point equals 1/72 of an inch. Less common in web design
+                        today.</p>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-bold mb-4 border-b pb-2">Relative Units</h2>
+                <p class="mb-4">Relative units change based on the viewport, font size, or parent element. They are more
+                    adaptable and often superior for responsive design.</p>
+
+                <div class="mt-6">
+                    <h3 class="font-bold mb-2">em</h3>
+                    <p>A relative unit determined by the parent element's font size. For example, if the parent font
+                        size is 16px, then 2em equals 32px.</p>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-bold mb-4 border-b pb-2">rem</h2>
+                <p class="mb-4">Similar to em, but it references the root element (&lt;html&gt;). This makes it more
+                    predictable, since it isn't affected by nested parent sizes.</p>
+                <p>Developers often prefer rem for consistent scaling across a site.</p>
+
+                <div class="mt-6">
+                    <h3 class="font-bold mb-2">Example</h3>
+                    <p class="text-sm">html { font-size: 16px; }<br>
+                        .element { font-size: 1.5rem; } → 24px</p>
+                </div>
+            </div>
+
+            <div class="bg-white border border-gray-200 p-6 rounded-lg shadow-sm">
+                <h2 class="text-xl font-bold mb-4 border-b pb-2">Viewport Units</h2>
+
+                <div class="mt-4">
+                    <h3 class="font-bold mb-2">vw (viewport width)</h3>
+                    <p>Relative to the width of the browser window. For instance, 50vw equals 50% of the viewport's
+                        width.</p>
+                </div>
+
+                <div class="mt-4">
+                    <h3 class="font-bold mb-2">vh (viewport height)</h3>
+                    <p>Relative to the height of the browser window. For example, 100vh makes an element stretch to the
+                        full height of the screen.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black text-white py-6 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2023 CSS Units Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>AOS.init();</script>
+    <script>feather.replace();</script>
 </body>
 
 </html>
