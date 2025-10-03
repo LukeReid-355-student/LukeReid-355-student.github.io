@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Media Queries</title>
-  <style>
-    body {
-      font-family: "Times New Roman", Times, serif;
-    }
-    textarea {
-      font-family: monospace; /* keeps code blocks easy to read */
-      white-space: pre-wrap;  /* wraps long lines */
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Media Queries</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        textarea {
+            font-family: monospace;
+            white-space: pre-wrap;
+        }
+    </style>
 </head>
+
 <body>
-  <h1>CSS Media Queries</h1>
+    <h1>CSS Media Queries</h1>
 
-  <h2>How does a CSS media query work, and why is it useful?</h2>
-  <p>
-    A CSS media query lets developers apply styles only when certain conditions
-    about the device or browser window are true. For example, you can write
-    styles that only apply if the screen is less than 768px wide or if the
-    device is in portrait orientation. This is extremely useful for creating
-    responsive designs that adjust automatically to desktops, tablets, and
-    smartphones, improving usability and user experience.
-  </p>
+    <h2>How does a CSS media query work, and why is it useful?</h2>
+    <p>
+        A CSS media query lets developers apply styles only when certain conditions
+        about the device or browser window are true. For example, you can write
+        styles that only apply if the screen is less than 768px wide or if the
+        device is in portrait orientation. This is useful for creating
+        responsive designs that adjust automatically to desktops, tablets, and
+        smartphones, user experience.
+    </p>
 
-  <h2>What "media features" are supported by media queries?</h2>
-  <p>
-    Media queries support many features, but here are four important ones:
-  </p>
+    <h2>What Media Features are supported by Media Queries?</h2>
+    <p>
+        Media queries support many features, but here are four important ones:
+    </p>
 
-  <h3>1. max-width</h3>
-  <p>
-    Targets screens that are at or below a certain width, making it useful for
-    mobile-friendly layouts.
-  </p>
-  <textarea rows="4" cols="70">
+    <h3>1. Max Width</h3>
+    <p>
+        Targets screens that are at or below a certain width, making it useful for
+        mobile-friendly layouts.
+    </p>
+    <textarea rows="4" cols="70">
 @media (max-width: 768px) {
   body {
     font-size: 14px;
@@ -45,12 +48,12 @@
 }
   </textarea>
 
-  <h3>2. orientation</h3>
-  <p>
-    Detects whether the device is in portrait (taller than wide) or landscape
-    (wider than tall).
-  </p>
-  <textarea rows="4" cols="70">
+    <h3>2. Orientation</h3>
+    <p>
+        Detects whether the device is in portrait (taller than wide) or landscape
+        (wider than tall).
+    </p>
+    <textarea rows="4" cols="70">
 @media (orientation: landscape) {
   .gallery {
     display: flex;
@@ -58,12 +61,12 @@
 }
   </textarea>
 
-  <h3>3. prefers-color-scheme</h3>
-  <p>
-    Checks if the user prefers light mode or dark mode and allows your website
-    to adapt automatically.
-  </p>
-  <textarea rows="4" cols="70">
+    <h3>3. Prefers Color Scheme</h3>
+    <p>
+        Checks if the user prefers light mode or dark mode and allows your website
+        to adapt automatically.
+    </p>
+    <textarea rows="4" cols="70">
 @media (prefers-color-scheme: dark) {
   body {
     background-color: #121212;
@@ -72,12 +75,12 @@
 }
   </textarea>
 
-  <h3>4. resolution</h3>
-  <p>
-    Targets high-density displays (like Retina screens) so you can provide
-    sharper images or icons.
-  </p>
-  <textarea rows="4" cols="70">
+    <h3>4. Resolution</h3>
+    <p>
+        Targets high-density displays (like Retina screens) so you can provide
+        sharper images or icons.
+    </p>
+    <textarea rows="4" cols="70">
 @media (min-resolution: 2dppx) {
   img {
     content: url("high-res-image.png");
@@ -86,4 +89,5 @@
   </textarea>
 
 </body>
+
 </html>
