@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- meta tags and title -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Images</title>
+
+	<!-- internal CSS for simplicity -->
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #fff;
+			color: #000;
+			margin: 40px;
+			line-height: 1.6;
+		}
+		h1 {
+			text-align: center;
+			text-transform: uppercase;
+		}
+		code, textarea {
+			background: #f2f2f2;
+			padding: 4px 6px;
+			border-radius: 4px;
+			font-family: "Courier New", monospace;
+		}
+		textarea {
+			display: block;
+			width: 100%;
+			min-height: 80px;
+			margin: 10px 0;
+		}
+		ul {
+			margin-left: 20px;
+		}
+		section {
+			margin-bottom: 30px;
+		}
+	</style>
+</head>
+
+<body>
+	<h1>Images</h1>
+
+	<section>
+		<h2>HTML vs CSS Image Presentation</h2>
+		<p>
+			Using an image in HTML with the <code>&lt;img&gt;</code> tag directly embeds the image into the page’s content. This is best for photos or visuals that are part of the page’s information. For example:
+		</p>
+		<code>&lt;img src="photo.jpg" alt="Example Image"&gt;</code>
+
+		<p>
+			In contrast, using <code>background-image</code> in CSS adds the image as part of the design or layout, not the content itself. This method is useful for decorative images or backgrounds.
+		</p>
+		<textarea>
+div {
+  background-image: url("pattern.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+		</textarea>
+
+		<p>
+			Functionally, <code>&lt;img&gt;</code> affects document structure and can be resized or given alt text for accessibility, while <code>background-image</code> is purely visual and controlled by CSS properties.
+		</p>
+	</section>
+
+	<section>
+		<h2>Other CSS Properties Affecting Background Images</h2>
+		<ul>
+			<li><code>background-size</code> — Controls how the image fits its container (e.g., <code>cover</code> or <code>contain</code>).</li>
+			<li><code>background-repeat</code> — Determines if the image repeats horizontally or vertically.</li>
+			<li><code>background-position</code> — Defines where the image is placed inside the element (e.g., <code>center</code>, <code>top right</code>).</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Dimensions vs Resolution</h2>
+		<p>
+			Dimensions refer to the physical width and height of an image (in pixels), while resolution describes the image’s pixel density or detail (often in DPI or PPI).
+		</p>
+	</section>
+
+	<section>
+		<h2>Extra Credit: Image File Formats</h2>
+		<ul>
+			<li><strong>GIF</strong> — Supports animation and transparency; limited to 256 colors.</li>
+			<li><strong>PNG</strong> — High-quality, lossless compression with transparency support.</li>
+			<li><strong>JPG/JPEG</strong> — Compressed format for photos; small file sizes but some quality loss.</li>
+			<li><strong>WebP</strong> — Modern format offering smaller sizes and good quality for web use.</li>
+			<li><strong>SVG</strong> — Vector-based; scalable without losing quality, ideal for logos and icons.</li>
+		</ul>
+		<p>
+			Each format serves different purposes: PNGs for crisp graphics, JPEGs for photos, GIFs for simple animations, and SVGs for infinitely scalable vector art.
+		</p>
+	</section>
+</body>
+</html>
