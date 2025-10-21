@@ -1,96 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <!-- meta tags and title -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Color</title>
 
-  <!-- external and internal CSS -->
-  <link rel="stylesheet" href="styles.css" media="all" />
-  <style>
-    /* Make code samples easy to read, and textareas appear on their own lines */
-    :root { --pad: 0.75rem; }
-    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; margin: 0 auto; padding: 2rem 1rem; max-width: 900px; color: #1f2937; }
-    h1, h2 { line-height: 1.2; margin: 0 0 0.5rem; }
-    h1 { font-size: 2rem; }
-    h2 { margin-top: 2rem; font-size: 1.25rem; }
-    p { margin: 0.75rem 0; }
-    ul { margin: 0.5rem 0 0.5rem 1.25rem; }
-    code { background: #f3f4f6; padding: 0.1rem 0.35rem; border-radius: 4px; }
-    textarea { display: block; width: 100%; min-height: 9rem; padding: var(--pad); font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; font-size: 0.95rem; border: 1px solid #e5e7eb; border-radius: 8px; background: #fafafa; }
-    .swatch-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.75rem; margin-top: 0.75rem; }
-    .swatch { border: 2px solid #e5e7eb; border-radius: 10px; padding: var(--pad); }
-    .swatch p { margin: 0; }
-    .demo-box { border: 4px solid #9ca3af; padding: 1rem; border-radius: 12px; margin: 0.5rem 0 1rem; background: #ffffff; }
-    .named { color: rebeccapurple; }
-    .hex   { background-color: #fef08a; }
-    .rgb   { border-color: rgb(34, 197, 94); }
-    .rgba  { background-color: rgba(59,130,246,0.15); }
-    .hsl   { color: hsl(14 90% 40%); }
-    footer { margin-top: 2rem; font-size: 0.9rem; color: #6b7280; }
-  </style>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Color</title>
+
+    <link rel="stylesheet" href="styles.css" media="all" />
+    <style>
+        :root {
+            --pad: 0.75rem;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+            line-height: 1.5;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            max-width: 900px;
+            color: #1f2937;
+        }
+
+        h1,
+        h2 {
+            line-height: 1.2;
+            margin: 0 0 0.5rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        h2 {
+            margin-top: 2rem;
+            font-size: 1.25rem;
+        }
+
+        p {
+            margin: 0.75rem 0;
+        }
+
+        ul {
+            margin: 0.5rem 0 0.5rem 1.25rem;
+        }
+
+        code {
+            background: #f3f4f6;
+            padding: 0.1rem 0.35rem;
+            border-radius: 4px;
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            min-height: 9rem;
+            padding: var(--pad);
+            font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+            font-size: 0.95rem;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .swatch-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 0.75rem;
+            margin-top: 0.75rem;
+        }
+
+        .swatch {
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: var(--pad);
+        }
+
+        .swatch p {
+            margin: 0;
+        }
+
+        .demo-box {
+            border: 4px solid #9ca3af;
+            padding: 1rem;
+            border-radius: 12px;
+            margin: 0.5rem 0 1rem;
+            background: #ffffff;
+        }
+
+        .named {
+            color: rebeccapurple;
+        }
+
+        .hex {
+            background-color: #fef08a;
+        }
+
+        .rgb {
+            border-color: rgb(34, 197, 94);
+        }
+
+        .rgba {
+            background-color: rgba(59, 130, 246, 0.15);
+        }
+
+        .hsl {
+            color: hsl(14 90% 40%);
+        }
+
+        footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #6b7280;
+        }
+    </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>CSS Color</h1>
-    <p><strong>Goal:</strong> Explain how CSS uses color and show examples for <code>color</code>, <code>background-color</code>, and <code>border-color</code>. This page also demonstrates several ways to write color values.</p>
-  </header>
+    <header>
+        <h1>CSS Color</h1>
+        <p><strong>Goal:</strong> Explain how CSS uses color and show examples for <code>color</code>,
+            <code>background-color</code>, and <code>border-color</code>. This page also demonstrates several ways to
+            write color values.</p>
+    </header>
 
-  <section>
-    <h2>What do these properties do?</h2>
-    <ul>
-      <li><code>color</code> — sets the color of text (the “foreground” of a font).</li>
-      <li><code>background-color</code> — fills the background of an element’s box.</li>
-      <li><code>border-color</code> — colors the border lines around an element.</li>
-    </ul>
+    <section>
+        <h2>What do these properties do?</h2>
+        <ul>
+            <li><code>color</code> — sets the color of text (the “foreground” of a font).</li>
+            <li><code>background-color</code> — fills the background of an element’s box.</li>
+            <li><code>border-color</code> — colors the border lines around an element.</li>
+        </ul>
 
-    <div class="demo-box named">
-      This box uses <code>color: rebeccapurple;</code> for the text.
-    </div>
-    <div class="demo-box hex">
-      This box uses <code>background-color: #fef08a;</code> (hex).
-    </div>
-    <div class="demo-box rgb">
-      This box uses <code>border-color: rgb(34, 197, 94);</code> (RGB).
-    </div>
-  </section>
+        <div class="demo-box named">
+            This box uses <code>color: rebeccapurple;</code> for the text.
+        </div>
+        <div class="demo-box hex">
+            This box uses <code>background-color: #fef08a;</code> (hex).
+        </div>
+        <div class="demo-box rgb">
+            This box uses <code>border-color: rgb(34, 197, 94);</code> (RGB).
+        </div>
+    </section>
 
-  <section>
-    <h2>How CSS accepts color values (with examples)</h2>
-    <p>CSS accepts many formats. The most common are named colors, hexadecimal, RGB/RGBA, and HSL/HSLA. Below are small swatches showing each format. You can copy and paste these values.</p>
+    <section>
+        <h2>How CSS accepts color values (with examples)</h2>
+        <p>CSS accepts many formats. The most common are named colors, hexadecimal, RGB/RGBA, and HSL/HSLA. Below are
+            small swatches showing each format. You can copy and paste these values.</p>
 
-    <div class="swatch-row">
-      <div class="swatch">
-        <p><strong>Named</strong></p>
-        <p><code>rebeccapurple</code>, <code>tomato</code>, <code>goldenrod</code></p>
-      </div>
-      <div class="swatch">
-        <p><strong>Hexadecimal</strong></p>
-        <p><code>#1f2937</code>, <code>#f59e0b</code>, <code>#10b981</code></p>
-      </div>
-      <div class="swatch">
-        <p><strong>RGB / RGBA</strong></p>
-        <p><code>rgb(59, 130, 246)</code><br><code>rgba(59, 130, 246, 0.35)</code></p>
-      </div>
-      <div class="swatch">
-        <p><strong>HSL / HSLA</strong></p>
-        <p><code>hsl(210 20% 20%)</code><br><code>hsla(14, 90%, 50%, 0.8)</code></p>
-      </div>
-    </div>
+        <div class="swatch-row">
+            <div class="swatch">
+                <p><strong>Named</strong></p>
+                <p><code>rebeccapurple</code>, <code>tomato</code>, <code>goldenrod</code></p>
+            </div>
+            <div class="swatch">
+                <p><strong>Hexadecimal</strong></p>
+                <p><code>#1f2937</code>, <code>#f59e0b</code>, <code>#10b981</code></p>
+            </div>
+            <div class="swatch">
+                <p><strong>RGB / RGBA</strong></p>
+                <p><code>rgb(59, 130, 246)</code><br><code>rgba(59, 130, 246, 0.35)</code></p>
+            </div>
+            <div class="swatch">
+                <p><strong>HSL / HSLA</strong></p>
+                <p><code>hsl(210 20% 20%)</code><br><code>hsla(14, 90%, 50%, 0.8)</code></p>
+            </div>
+        </div>
 
-    <div class="demo-box rgba hsl">
-      This box mixes formats: <code>background-color: rgba(59,130,246,.15)</code> and text <code>color: hsl(14 90% 40%)</code>.
-    </div>
-  </section>
+        <div class="demo-box rgba hsl">
+            This box mixes formats: <code>background-color: rgba(59,130,246,.15)</code> and text
+            <code>color: hsl(14 90% 40%)</code>.
+        </div>
+    </section>
 
-  <section>
-    <h2>Inline and Block Code Samples</h2>
-    <p>Use inline <code>&lt;code&gt;</code> for short bits like <code>color: tomato;</code>. For multi-line examples, wrap them in a <code>&lt;textarea&gt;</code> so they’re easy to copy. Note how we show the literal tags using <code>&amp;lt;</code> and <code>&amp;gt;</code>:</p>
+    <section>
+        <h2>Inline and Block Code Samples</h2>
+        <p>Use inline <code>&lt;code&gt;</code> for short bits like <code>color: tomato;</code>. For multi-line
+            examples, wrap them in a <code>&lt;textarea&gt;</code> so they’re easy to copy. Note how we show the literal
+            tags using <code>&amp;lt;</code> and <code>&amp;gt;</code>:</p>
 
-    <h3>Example CSS</h3>
-    <textarea readonly>
+        <h3>Example CSS</h3>
+        <textarea readonly>
 /* Text, background, and border examples */
 h2      { color: rebeccapurple; }
 .notice { background-color: #fff7ed; }
@@ -103,8 +193,8 @@ h2      { color: rebeccapurple; }
 .warning { color: hsl(14 90% 40%); }
     </textarea>
 
-    <h3>Example HTML</h3>
-    <textarea readonly>
+        <h3>Example HTML</h3>
+        <textarea readonly>
 &lt;div class="card notice"&gt;
   &lt;h2&gt;Hello Color&lt;/h2&gt;
   &lt;p&gt;This demonstrates &lt;code&gt;color&lt;/code&gt;, 
@@ -112,8 +202,9 @@ h2      { color: rebeccapurple; }
      &lt;code&gt;border-color&lt;/code&gt;.&lt;/p&gt;
 &lt;/div&gt;
     </textarea>
-  </section>
+    </section>
 
-  
+
 </body>
+
 </html>
