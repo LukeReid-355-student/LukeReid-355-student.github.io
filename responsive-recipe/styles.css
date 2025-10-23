@@ -1,9 +1,24 @@
 :root {
---bg: #ffffff;
---ink: #1f0f0f;
---muted: #6a4b4b;
---card: #fff;
---rule: #ddd;
---radius: 18px;
---shadow: 0 6px 20px rgba(0,0,0,.06);
+    --bg: #ffffff;
+    --ink: #1f0f0f;
+    --muted: #6a4b4b;
+    --card: #fff;
+    --rule: #ddd;
+    --radius: 18px;
+    --shadow: 0 6px 20px rgba(0, 0, 0, .06);
+}
+
+body {
+    margin: 0;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.35;
+}
+
+
+.page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
 }
