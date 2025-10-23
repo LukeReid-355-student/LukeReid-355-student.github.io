@@ -1,11 +1,21 @@
 :root {
     --bg: #ffffff;
-    --ink: #1f0f0f;
-    --muted: #6a4b4b;
+    --ink: #111;
+    --muted: #111;
+    --rule: #d9d9d9;
     --card: #fff;
-    --rule: #ddd;
     --radius: 18px;
     --shadow: 0 6px 20px rgba(0, 0, 0, .06);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 body {
@@ -16,107 +26,135 @@ body {
     line-height: 1.35;
 }
 
-
 .page {
-    max-width: 900px;
+    max-width: 980px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 18px clamp(16px, 4vw, 28px) 36px;
 }
 
+
 .hero {
+    display: grid;
+    gap: 16px;
+}
+
+.title-block {
+    align-self: start;
+}
+
+.title {
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    line-height: .9;
+    letter-spacing: .02em;
+    font-size: clamp(48px, 12vw, 110px);
+    /* big like the wireframe */
+}
+
+.subtitle {
+    margin: 6px 0 0;
+    font-style: italic;
+    color: var(--muted);
+    font-size: clamp(16px, 3.6vw, 22px);
+}
+
+
+.photo {
+    margin: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    box-shadow: var(--shadow);
+    background: #f5f5f5;
+}
+
+.photo-placeholder {
+    aspect-ratio: 16/9;
+    width: 100%;
+    display: grid;
+    place-items: center;
     font-size: 14px;
-    background: repeating-linear-gradient(45deg, #fafafa 0 14px, #f0f0f0 14px 28px);
+    color: #8a8a8a;
+    background:
+        linear-gradient(to bottom right, transparent 49%, rgba(0, 0, 0, .08) 50%, transparent 51%),
+        linear-gradient(to top right, transparent 49%, rgba(0, 0, 0, .08) 50%, transparent 51%),
+        repeating-linear-gradient(90deg, #fafafa 0 20px, #f0f0f0 20px 40px);
 }
 
 
 .meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    background: var(--card);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 20px;
+    align-items: start;
+    padding: 14px 16px;
+    border: 1px solid var(--rule);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    padding: 16px;
-    border: 1px solid var(--rule);
-    margin-top: 20px;
+    background: var(--card);
+    margin-top: 16px;
 }
 
-
-.meta h3 {
+.meta .fact h3 {
     margin: 0 0 6px;
     font-size: 18px;
 }
 
-.meta p {
+.meta .fact p {
     margin: 0;
     font-size: 15px;
 }
 
 
-.sections {
-    margin-top: 20px;
+.content {
+    margin-top: 18px;
     display: grid;
     gap: 18px;
 }
 
-
 .card {
-    background: var(--card);
-    border-radius: var(--radius);
+    padding: clamp(16px, 4vw, 24px);
     border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--card);
     box-shadow: var(--shadow);
-    padding: 20px;
 }
 
-
-.card h2 {
+.section-title {
     margin: 0 0 8px;
-    font-size: clamp(22px, 6vw, 28px);
     font-style: italic;
     color: var(--muted);
+    font-size: clamp(22px, 5.5vw, 28px);
 }
 
-
-ul.ingredients {
+.ingredients {
     margin: 8px 0 0;
     padding-left: 1.1em;
     list-style: disc;
 }
 
+.ingredients li {
+    margin-bottom: .35em;
+}
 
-ol.directions {
-    margin: 10px 0 0;
+.directions {
+    margin: 8px 0 0;
     padding-left: 1.2em;
 }
 
-
-.footnote {
-    margin-top: 12px;
-    font-size: 13px;
-    color: #6b5656;
+.directions li {
+    margin-bottom: .6em;
 }
 
 
-@media (min-width: 680px) {
-    .sections {
+@media (min-width: 760px) {
+    .hero {
+        grid-template-columns: 1.1fr 1fr;
+        align-items: center;
+    }
+
+    .content {
         grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-@media print {
-    body {
-        background: white;
-    }
-
-    .page {
-        max-width: none;
-        padding: 0.4in;
-    }
-
-    .card,
-    .meta,
-    .figure {
-        box-shadow: none;
     }
 }
