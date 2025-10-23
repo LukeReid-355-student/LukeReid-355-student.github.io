@@ -22,3 +22,80 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
+.hero {
+font-size: 14px;
+background: repeating-linear-gradient(45deg, #fafafa 0 14px, #f0f0f0 14px 28px);
+}
+
+
+.meta {
+display: flex;
+flex-wrap: wrap;
+gap: 20px;
+background: var(--card);
+border-radius: var(--radius);
+box-shadow: var(--shadow);
+padding: 16px;
+border: 1px solid var(--rule);
+margin-top: 20px;
+}
+
+
+.meta h3 { margin: 0 0 6px; font-size: 18px; }
+.meta p { margin: 0; font-size: 15px; }
+
+
+.sections {
+margin-top: 20px;
+display: grid;
+gap: 18px;
+}
+
+
+.card {
+background: var(--card);
+border-radius: var(--radius);
+border: 1px solid var(--rule);
+box-shadow: var(--shadow);
+padding: 20px;
+}
+
+
+.card h2 {
+margin: 0 0 8px;
+font-size: clamp(22px, 6vw, 28px);
+font-style: italic;
+color: var(--muted);
+}
+
+
+ul.ingredients {
+margin: 8px 0 0;
+padding-left: 1.1em;
+list-style: disc;
+}
+
+
+ol.directions {
+margin: 10px 0 0;
+padding-left: 1.2em;
+}
+
+
+.footnote {
+margin-top: 12px;
+font-size: 13px;
+color: #6b5656;
+}
+
+
+@media (min-width: 680px) {
+.sections { grid-template-columns: 1fr 1fr; }
+}
+
+
+@media print {
+body { background: white; }
+.page { max-width: none; padding: 0.4in; }
+.card, .meta, .figure { box-shadow: none; }
+}
